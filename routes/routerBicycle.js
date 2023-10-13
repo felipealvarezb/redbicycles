@@ -9,7 +9,7 @@ router.get("/create", (req, res) => {
 });
 router.post("/create", bicycleController.createBicycle);
 
-router.get("/edit/:id", bicycleController.editBicycle);
+router.get("/edit/:id", bicycleController.showEditForm);
 router.post("/edit", bicycleController.editBicycle);
 
 module.exports = router;

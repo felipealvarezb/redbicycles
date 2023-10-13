@@ -3,21 +3,21 @@
 <div class="container">
     <div class="row">
         <div class="column">
-            <h1>Edit bicycle <%= bike._id %></h1>
+            <h1>Edit bicycle <%= bicycle._id %></h1>
             <a class="nav-link" href="/bicycle"> List of bicycles</a>
         </div>
         <div class="column">
-            <form action="/bicycle/edit/<%= bike._id %>" method="post">
+            <form action="/bicycle/edit/<%= bicycle._id %>" method="post">
                 
                 <!-- Campo Color -->
                 <div class="mb-3">
                     <label for="color" class="form-label">Color:</label>
                     <select class="form-select" id="color" name="color" required>
                         <option value="">--select--</option>
-                        <option value="Blanco" <% if (bike.color === "Blanco") { %>selected<% } %>>Blanco</option>
-                        <option value="Negro" <% if (bike.color === "Negro") { %>selected<% } %>>Negro</option>
-                        <option value="Rojo" <% if (bike.color === "Rojo") { %>selected<% } %>>Rojo</option>
-                        <option value="Verde" <% if (bike.color === "Verde") { %>selected<% } %>>Verde</option>
+                        <option value="Blanco" <% if (bicycle.color === "Blanco") { %>selected<% } %>>Blanco</option>
+                        <option value="Negro" <% if (bicycle.color === "Negro") { %>selected<% } %>>Negro</option>
+                        <option value="Rojo" <% if (bicycle.color === "Rojo") { %>selected<% } %>>Rojo</option>
+                        <option value="Verde" <% if (bicycle.color === "Verde") { %>selected<% } %>>Verde</option>
                     </select>
                 </div>
                 
@@ -26,23 +26,23 @@
                     <label for="model" class="form-label">Modelo:</label>
                     <select class="form-select" id="model" name="model" required>
                         <option value="">--select--</option>
-                        <option value="Ruta" <% if (bike.model === "Ruta") { %>selected<% } %>>Ruta</option>
-                        <option value="Cross" <% if (bike.model === "Cross") { %>selected<% } %>>Cross</option>
-                        <option value="Montaña" <% if (bike.model === "Montaña") { %>selected<% } %>>Montaña</option>
-                        <option value="Turismo" <% if (bike.model === "Turismo") { %>selected<% } %>>Turismo</option>
+                        <option value="Ruta" <% if (bicycle.model === "Ruta") { %>selected<% } %>>Ruta</option>
+                        <option value="Cross" <% if (bicycle.model === "Cross") { %>selected<% } %>>Cross</option>
+                        <option value="Montaña" <% if (bicycle.model === "Montaña") { %>selected<% } %>>Montaña</option>
+                        <option value="Turismo" <% if (bicycle.model === "Turismo") { %>selected<% } %>>Turismo</option>
                     </select>
                 </div>
     
                 <!-- Campo Latitud -->
                 <div class="mb-3">
                     <label for="latitud" class="form-label">Latitud:</label>
-                    <input type="text" class="form-control" id="latitud" name="latitud" value="<%= bike.location.coordinates[1] %>" required>
+                    <input type="text" class="form-control" id="latitud" name="latitud" value="<%= bicycle.location.coordinates[1] %>" required>
                 </div>
     
                 <!-- Campo Longitud -->
                 <div class="mb-3">
                     <label for="longitud" class="form-label">Longitud:</label>
-                    <input type="text" class="form-control" id="longitud" name="longitud" value="<%= bike.location.coordinates[0] %>" required>
+                    <input type="text" class="form-control" id="longitud" name="longitud" value="<%= bicycle.location.coordinates[0] %>" required>
                 </div>
                 
                 <div class="text-center">
