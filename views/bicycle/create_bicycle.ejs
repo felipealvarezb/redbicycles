@@ -1,0 +1,55 @@
+<%- include('../layout/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1>Add bicycles here</h1>
+            <a class="nav-link" href="/bicycle"> List of bicycles</a>
+        </div>
+        <div class="column">
+            <form action="/bicycle/create" method="post">
+                
+                <!-- Campo Color -->
+                <div class="mb-3">
+                    <label for="color" class="form-label">Color:</label>
+                    <select class="form-select" id="color" name="color" required>
+                        <option value="">--select--</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Rojo">Rojo</option>
+                        <option value="Verde">Verde</option>
+                    </select>
+                </div>
+                
+                <!-- Campo Modelo -->
+                <div class="mb-3">
+                    <label for="model" class="form-label">Modelo:</label>
+                    <select class="form-select" id="model" name="model" required>
+                        <option value="">--select--</option>
+                        <option value="Ruta">Ruta</option>
+                        <option value="Cross">Cross</option>
+                        <option value="Montian">Montaña</option>
+                        <option value="Turismo">Turismo</option>
+                    </select>
+                </div>
+    
+                <!-- Campo Latitud -->
+                <div class="mb-3">
+                    <label for="latitud" class="form-label">Latitud:</label>
+                    <input type="text" class="form-control" id="latitud" name="latitud" required>
+                </div>
+    
+                <!-- Campo Longitud -->
+                <div class="mb-3">
+                    <label for="longitud" class="form-label">Longitud:</label>
+                    <input type="text" class="form-control" id="longitud" name="longitud" required>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mx-auto">Create</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

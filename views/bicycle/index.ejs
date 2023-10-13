@@ -1,0 +1,52 @@
+<%- include('../layout/header') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1>All bicycles here</h1>
+            <a class="nav-link" href="/bicycle/create/"> Create Bicycle</a>
+        </div>
+        <div class="col">
+            <div class="table-responsive">
+                <% if (bicycles && bicycles.length > 0) { %>
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Id</th>
+                            <th>Color</th>
+                            <th>Modelo</th>
+                            <th>Ubicacion</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% bicycles.forEach(function(bicycle) { %>
+                            <tr>
+                                <td><%= bicycle.id %></td>
+                                <td><%= bicycle.color %></td>
+                                <td><%= bicycle.model %></td>
+                                <td><%= bicycle.location.coordinates[1] %>, <%= bicycle.location.coordinates[0] %></td>
+                                <td>
+                                    <a href="/edit/<%= bicycle._id %>" class="text-success"><i class="fas fa-edit"></i></a>
+                                    <a href="/delete/<%= bicycle._id %>" class="text-danger"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                <p>No hay bicicletas disponibles.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("table").DataTable({
+            order: [0, 'desc']
+        });
+    });
+</script>

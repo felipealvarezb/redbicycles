@@ -1,0 +1,22 @@
+# Módulos de Node.js
+node_modules/
+
+# Archivos de registro
+npm-debug.log
+yarn-error.log
+
+# Archivos de configuración
+.env
+
+# Dependiendo del entorno, puedes querer excluir lo siguiente:
+# Configuración local (ajusta según sea necesario)
+config/local.js
+config/local.json
+config/local.yml
+config/local.env
+
+# MacOS
+.DS_Store
+
+# Pruebas y cobertura
+coverage/
